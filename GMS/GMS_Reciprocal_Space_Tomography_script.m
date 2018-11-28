@@ -1,6 +1,7 @@
 %% Reciprocal Space Tomography on GaMo4S8
 %% Load raw data
 %%
+%{
 load('Cartesian_mesh_Lab.mat','Xc','Yc','Zc'); %meshgrid in [Qx,Qy,Qz] order in nm^-1 units 
 load('GMS_intensity_raw.mat','I_cart_cartint'); %Raw intensity data in [Qx,Qy,Qz] order in arbitrary units
 %% Post processing
@@ -15,8 +16,13 @@ A=[Xc(:),Yc(:),Zc(:)]*T';
 Xt=reshape(A(:,1),size(Xc));
 Yt=reshape(A(:,2),size(Yc));
 Zt=reshape(A(:,3),size(Zc));
+
+%}
+
+
 %% Show original data without smoothing or symmetrizing
 %%
+%{
 thr=3.6;    %Intensity threshold for visualization : best option: 3.6
 alpha=1; % no transparency
 col=[0.4,0.4,1]; %blue
@@ -110,6 +116,7 @@ grid off
 %}
 %% Perform Gaussian smoothing to erase noise
 %%
+%{
 %Applying 3D Gaussian filter to smooth noisy data. Takes some time to run,
 %therefore it has been saved to GMS_Cart_intensity_gauss_31_3.mat
 %====================================================
@@ -209,6 +216,7 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 grid off
+%}
 %==========================================================================
 
 
@@ -297,9 +305,10 @@ xlim([-lim,lim])
 ylim([-lim,lim])
 zlim([-lim,lim])
 axis square
+grid on
 
 figure(33)
-Pos=[5.9690    3.1750    8.0645    6.8580];
+Pos=[5.9690    3.1750    4.1    4];
 cla
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
@@ -312,10 +321,10 @@ zlim([-lim,lim])
 axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
-grid off
+grid on
 
 figure(34)
-Pos=[14.1817    3.1327    8.2762    7.0273];
+Pos=[14.1817    3.1327    4.1    4];
 cla
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
@@ -329,10 +338,10 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid off
+grid on
 
 figure(35)
-Pos=[22.7753    2.7093    6.8792    8.0645];
+Pos=[22.7753    2.7093    3.6    4];
 cla
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
@@ -346,11 +355,13 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid off
+grid on
+export_fig('Figures/GMS_110_symm.png'
+
 
 
 figure(36)
-Pos=[29.9297    3.5348    7.0273    6.6040];
+Pos=[29.9297    3.5348    4.1    4];
 cla
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
@@ -364,7 +375,7 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid off
+grid on
 
 %==========================================================================
 

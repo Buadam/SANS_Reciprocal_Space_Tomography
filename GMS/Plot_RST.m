@@ -40,6 +40,6 @@ box on
 %zlabel('q_z (nm^{-1})')
 
 set(gcf, 'Color', 'w');
-set(gca,'FontSize',12);
+set(gca,'FontSize',8);
 
 end
