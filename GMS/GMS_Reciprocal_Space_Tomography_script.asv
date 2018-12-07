@@ -320,13 +320,11 @@ ylim([-lim,lim])
 zlim([-lim,lim])
 axis square
 grid on
-export_fig('Figures/GMS_persp_symm.png','-png');
-
-
 
 figure(33)
 Pos=[5.9690    3.1750    8.6    8.4];
 cla
+grid off
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
 view(1/sqrt(3)*[1,1,1])
@@ -336,10 +334,10 @@ xlim([-lim,lim])
 ylim([-lim,lim])
 zlim([-lim,lim])
 axis square
-grid on
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
-export_fig('Figures/GMS_111_symm.png','-png');
+
+export_fig('Figures/GMS_111_symm.pdf');
 
 
 figure(34)
@@ -357,11 +355,11 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid on
-export_fig('Figures/GMS_001_symm.png');
+grid off
+export_fig('Figures/GMS_001_symm.pdf');
 
 figure(35)
-Pos=[22.7753    2.7093    7.56    8.4];
+Pos=[22.7753    2.7093    3.78    4.2];
 cla
 hold on
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
@@ -375,8 +373,8 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid on
-export_fig('Figures/GMS_110_symm.png','-png');
+grid off
+export_fig('Figures/GMS_110_symm.png','-png',);
 
 
 
@@ -395,8 +393,8 @@ axis square
 set(gcf,'Units','centimeters');
 set(gcf, 'Position', Pos);
 %axis square
-grid on
-export_fig('Figures/GMS_112_symm.png','-png');
+grid off
+export_fig('Figures/GMS_112_symm.pdf');
 %==========================================================================
 
 
