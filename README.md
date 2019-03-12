@@ -6,7 +6,7 @@ This code performs the reconstruction of the 3d scattering image from the 2d sli
 ![alt text](3D_reconstruction_from_2D_Slices.png)
 
 ## Files
-The live Matlab scripts in the root directory are for demonstration purposes only, they will not run due to the references to data inside the actual working folders.
+The live Matlab scripts in the root directory are for demonstration purposes only, they will not run due to the references to data inside the actual working folders. The same files have to be run inside the working directories, which contain the raw data for two specific crystals: GaV4S8 and GaMo4S8.
 
 Recover_volumetric_data_1deg.mlx: This code performs the 3d image reconstruction from the 2D slices and saves the 3d data to .m files. Running time is typically ~5-10 mins due to the 3d interpolation steps involved.
 
