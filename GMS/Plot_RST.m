@@ -24,6 +24,9 @@ p.EdgeColor = 'none';%[0.3,0.3,0.3];
 p.LineWidth=0.5;
 p.EdgeAlpha=0.6;
 
+camlight 
+lighting gouraud
+%{
 p.FaceLighting = 'flat';
 p.AmbientStrength = 0.3;
 p.DiffuseStrength = 0.4;
@@ -33,13 +36,16 @@ p.BackFaceLighting = 'reverselit';
 
 light('Position',[0.8 0 0.8],'Style','local')
 lighting flat
+%}
 grid on
 box on
 %xlabel('q_x (nm^{-1})')
 %ylabel('q_y (nm^{-1})')
 %zlabel('q_z (nm^{-1})')
-
+xticks([-0.5,0,0.5])
+yticks([-0.5,0,0.5])
+%zticks([-0.5,-0.25,0,0.25,0.5])
 set(gcf, 'Color', 'w');
-set(gca,'FontSize',12);
+set(gca,'FontSize',16);
 
 end
