@@ -1,7 +1,7 @@
 %% Reciprocal Space Tomography on GaMo4S8
 %% Load raw data
 %%
-%{
+
 load('Cartesian_mesh_Lab.mat','Xc','Yc','Zc'); %meshgrid in [Qx,Qy,Qz] order in nm^-1 units 
 load('GMS_intensity_raw.mat','I_cart_cartint'); %Raw intensity data in [Qx,Qy,Qz] order in arbitrary units
 %% Post processing
@@ -300,19 +300,14 @@ col=[0.4,0.4,1]; %blue
 alpha=1;
 thr=3.6; %Intensity threshold for visualization : best option: 3.6
 figure(32)
-wx=9.67;
+wx=9.9;
 wy=9.22;
 
 cla
 hold on
-%%Plot_Slicing_Planes;
 Plot_RST(Xt,Yt,Zt,I_av,thr,col,alpha);
 set(gcf,'Units','centimeters');
-%daspect([1 1 1]) 
-
 set(gcf, 'Position', [1.1007 1.7357 wx wy]);
-%view(-162,47); %view1
-%view(117,52); %top view
 view(100,13);
 lim=0.65;
 xlim([-lim,lim])
@@ -320,7 +315,7 @@ ylim([-lim,lim])
 zlim([-lim,lim])
 axis square
 grid on
-export_fig('Figures/GMS_persp_symm.png','-png');
+export_fig('Figures/GMS_persp_symm.png','-png','-nocrop');
 
 
 
